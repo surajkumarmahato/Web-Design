@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.bg-gradient {
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+}
+
+.btn-gradient {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+  border: none;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+  color: #fff;
+}
+
+.hover-shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
