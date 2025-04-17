@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
+import Header from './Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
 
 
-export default function MainPage() {
+export default function LoginPage() {
   const [role, setRole] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
     setIsLoggedIn(true);
+    navigate('/dashboard');
   };
-
+  
   return (
+    <div>
+    <Header/>
     <div className="vh-100 d-flex align-items-center justify-content-center bg-gradient">
-      {!isLoggedIn ? (
         <form
           onSubmit={handleLogin}
           className="bg-white p-5 rounded-4 shadow-lg w-100"
@@ -59,16 +64,11 @@ export default function MainPage() {
             />
           </div>
 
-          <button type="submit" className="btn btn-gradient w-100 fw-semibold">
+          <button type = "submit" className="btn btn-gradient w-100 fw-semibold" >
             Login
           </button>
         </form>
-      ) : (
-        <div className="text-center">
-          <h2 className="text-success fw-bold">🎉 Welcome, <span className="text-capitalize">{role}</span>!</h2>
-          <p className="text-muted">You have successfully logged in.</p>
-        </div>
-      )}
+    </div>
     </div>
   );
 }
