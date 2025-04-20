@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Footer() {
   return (
-    <footer className="bg-dark text-white py-4 mt-5">
+    <footer style={{ backgroundColor: 'rgb(52, 103, 24)' }} className="text-white py-4">
       <div className="container text-center">
         <p>&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
 

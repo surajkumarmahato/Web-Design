@@ -4,10 +4,9 @@ import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 export default function Header() {
   return (
     <div>
-      <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+      <Navbar bg="light" variant="light" expand="lg" sticky="top" className="shadow-sm">
         <Container>
           <Navbar.Brand href="#" className="d-flex align-items-center">
-            {/* Logo Image - replace 'logo.png' with your actual logo path */}
             <img
               src="logo.png"
               alt="URMICHAND GROUP"
@@ -18,11 +17,14 @@ export default function Header() {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar-nav" />
           <Navbar.Collapse id="navbar-nav" className="justify-content-end">
-            <Nav>
+            <Nav className="gap-2">
               <Nav.Link href="#services">Services</Nav.Link>
               <Nav.Link href="#about">About</Nav.Link>
               <Nav.Link href="#contact">Contact</Nav.Link>
-              <Button variant="outline-warning" href="/login" className="ms-2">Login</Button>
+              {/* <Button variant="outline-warning" href="/login" className="ms-2">Login</Button> */}
+              <Button href="/login" className="ms-2" style={{ backgroundColor: 'rgb(247, 141, 20)', border: 'none', color: 'white' }}>
+  Login
+</Button>              
             </Nav>
           </Navbar.Collapse>
         </Container>
