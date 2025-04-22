@@ -1,35 +1,19 @@
 import React from 'react';
 import { Container, Navbar, Nav, Button, Form, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavAdmin from './NavAdmin';
 
 export default function AssoReg() {
   return (
-    <div style={{ backgroundColor: '#f8f9fa', minHeight: '100vh' }}>
-      <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
-        <Container>
-          <Navbar.Brand href="#" className="d-flex align-items-center">
-            <img src="logo.png" alt="URMICHAND GROUP" width="100" height="60" className="d-inline-block align-top me-2" />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbar-nav" />
-          <Navbar.Collapse id="navbar-nav" className="justify-content-end">
-            <Nav>
-              <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-              <Nav.Link href="/user">User</Nav.Link>
-              <Nav.Link href="/project">Project</Nav.Link>
-              <Nav.Link href="/registration">Registration</Nav.Link>
-              <Nav.Link href="/booking">Booking</Nav.Link>
-              <Nav.Link href="/payment">Payment</Nav.Link>
-              <Nav.Link href="/expenses">Expenses</Nav.Link>
-              <Nav.Link href="/gallery">Gallery</Nav.Link>
-              <Nav.Link href="/messages">Messages</Nav.Link>
-              <Button variant="outline-warning" href="/logout" className="ms-2">Logout</Button>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
+    <div
+      className="min-vh-100"
+      style={{
+        background: 'linear-gradient(to right, rgb(222, 200, 170), rgb(170, 207, 170))'
+      }}
+    >
+      <NavAdmin />
       <Container className="py-5">
-        <h3 className="mb-4 text-center text-primary">Associate Registration</h3>
+        <h3 className="mb-4 text-center">Associate Registration</h3>
         <Form>
           <h5 className="mb-3">Associate Details</h5>
           <Row className="mb-3">
@@ -53,16 +37,16 @@ export default function AssoReg() {
             <Col md={4}><Form.Group><Form.Label>Mail ID</Form.Label><Form.Control type="email" /></Form.Group></Col>
           </Row>
           <Row className="mb-3">
-            <Col md={6}><Form.Group><Form.Label>WhatsApp No</Form.Label><Form.Control type="text" /></Form.Group></Col>
-            <Col md={6}><Form.Group><Form.Label>Photo Upload</Form.Label><Form.Control type="file" /></Form.Group></Col>
+            <Col md={4}><Form.Group><Form.Label>WhatsApp No</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={4}><Form.Group><Form.Label>Photo Upload</Form.Label><Form.Control type="file" /></Form.Group></Col>
+            <Col md={4}><Form.Group><Form.Label>Payout Plan</Form.Label><Form.Control type="text" /></Form.Group></Col>
           </Row>
           <Row className="mb-3">
-            <Col md={4}><Form.Group><Form.Label>Payout Plan</Form.Label><Form.Control type="text" /></Form.Group></Col>
-            <Col md={4}><Form.Group><Form.Label>State</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={4}><Form.Group><Form.Label>Address</Form.Label><Form.Control type="text" /></Form.Group></Col>
             <Col md={4}><Form.Group><Form.Label>District</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={4}><Form.Group><Form.Label>State</Form.Label><Form.Control type="text" /></Form.Group></Col>
           </Row>
           <Row className="mb-4">
-            <Col md={4}><Form.Group><Form.Label>Address</Form.Label><Form.Control type="text" /></Form.Group></Col>
             <Col md={4}><Form.Group><Form.Label>Pin Code</Form.Label><Form.Control type="text" /></Form.Group></Col>
           </Row>
 
@@ -88,15 +72,13 @@ export default function AssoReg() {
             <Col md={4}><Form.Group><Form.Label>Mail ID</Form.Label><Form.Control type="email" /></Form.Group></Col>
           </Row>
           <Row className="mb-3">
-            <Col md={6}><Form.Group><Form.Label>WhatsApp No</Form.Label><Form.Control type="text" /></Form.Group></Col>
-            <Col md={6}><Form.Group><Form.Label>Photo Upload</Form.Label><Form.Control type="file" /></Form.Group></Col>
+            <Col md={4}><Form.Group><Form.Label>WhatsApp No</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={4}><Form.Group><Form.Label>Photo Upload</Form.Label><Form.Control type="file" /></Form.Group></Col>
+            <Col md={4}><Form.Group><Form.Label>Address</Form.Label><Form.Control type="text" /></Form.Group></Col>
           </Row>
           <Row className="mb-4">
-            <Col md={4}><Form.Group><Form.Label>Address</Form.Label><Form.Control type="text" /></Form.Group></Col>
             <Col md={4}><Form.Group><Form.Label>State</Form.Label><Form.Control type="text" /></Form.Group></Col>
             <Col md={4}><Form.Group><Form.Label>District</Form.Label><Form.Control type="text" /></Form.Group></Col>
-          </Row>
-          <Row className="mb-4">
             <Col md={4}><Form.Group><Form.Label>Pin Code</Form.Label><Form.Control type="text" /></Form.Group></Col>
           </Row>
 

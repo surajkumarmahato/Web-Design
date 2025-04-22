@@ -1,71 +1,49 @@
 import React from 'react';
-import { Container, Navbar, Nav, Button } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavAdmin from './NavAdmin';
 
 export default function RegMain() {
   const registrationTypes = [
-    { title: "Customer Registration", color: "#0d6efd" },    // Bootstrap primary
-    { title: "Associate Registration", color: "#198754" },   // Success
-    { title: "Freelancer Registration", color: "#0dcaf0" },  // Info
-    { title: "Land Owner Registration", color: "#ffc107" },  // Warning
-    { title: "Add Expenses", color: "#dc3545" }              // Danger
+    { title: "Customer Registration", color: "rgba(52, 103, 24, 0.75)" },
+    { title: "Associate Registration", color: "rgba(247, 141, 20, 0.75)" },
+    { title: "Freelancer Registration", color: "rgba(108, 117, 125, 0.75)" },
+    { title: "Land Owner Registration", color: "rgba(52, 103, 24, 0.75)" },
+    { title: "Add Expenses", color: "rgba(247, 141, 20, 0.75)" }
   ];
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}>
-      {/* Navbar */}
-      <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
-        <Container>
-          <Navbar.Brand href="#" className="d-flex align-items-center">
-            <img
-              src="logo.png"
-              alt="URMICHAND GROUP"
-              width="100"
-              height="60"
-              className="d-inline-block align-top me-2"
-            />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbar-nav" />
-          <Navbar.Collapse id="navbar-nav" className="justify-content-end">
-            <Nav>
-              <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-              <Nav.Link href="/user">User</Nav.Link>
-              <Nav.Link href="/project">Project</Nav.Link>
-              <Nav.Link href="/registration">Registration</Nav.Link>
-              <Nav.Link href="/booking">Booking</Nav.Link>
-              <Nav.Link href="/payment">Payment</Nav.Link>
-              <Nav.Link href="/expenses">Expenses</Nav.Link>
-              <Nav.Link href="/gallery">Gallery</Nav.Link>
-              <Nav.Link href="/messages">Messages</Nav.Link>
-              <Button variant="outline-warning" href="/logout" className="ms-2">
-                Logout
-              </Button>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+    <div
+      className="min-vh-100"
+      style={{
+        background: 'linear-gradient(to right, rgb(222, 200, 170), rgb(170, 207, 170))'
+      }}
+    >
+      <NavAdmin />
 
-      {/* Colorful Registration Cards */}
-      <Container className="d-flex flex-column align-items-center justify-content-center py-5">
+      <Container className="py-5 d-flex flex-column align-items-center justify-content-center">
         <h2 className="mb-4 fw-bold text-dark text-center">Registration</h2>
 
-        <div className="w-100" style={{ maxWidth: '400px' }}>
+        <div className="d-grid gap-4 w-100" style={{ maxWidth: '500px' }}>
           {registrationTypes.map((item, index) => (
             <div
               key={index}
-              className="mb-3 text-white text-center fw-semibold fs-5 rounded py-3 shadow"
+              className="text-white text-center fw-semibold fs-5 rounded-3 py-3 px-4"
               style={{
                 backgroundColor: item.color,
-                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                cursor: 'pointer'
+                border: '1px solid rgba(255,255,255,0.5)',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer',
+                backdropFilter: 'blur(4px)'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'scale(1.03)';
-                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+                e.currentTarget.style.backgroundColor = item.color.replace('0.75', '0.95');
+                e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.2)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'scale(1)';
-                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
+                e.currentTarget.style.backgroundColor = item.color;
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
               }}
             >
               {item.title}

@@ -55,8 +55,6 @@ export default function Dashboard() {
 
       <div className="py-5" style={{ background: 'linear-gradient(to right, rgb(222, 200, 170), rgb(170, 207, 170))' }}>
         <Container>
-          <h2 className="fw-bold text-center mb-5 text-dark">Admin Dashboard</h2>
-
           {/* Project Details Table */}
           <Card className="mb-5 shadow-sm">
             <Card.Header className="bg-dark text-white fw-bold">Project Details</Card.Header>

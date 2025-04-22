@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar, Button } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button, NavDropdown } from 'react-bootstrap';
 
 export default function NavAdmin() {
   return (
@@ -19,18 +19,37 @@ export default function NavAdmin() {
           <Navbar.Collapse id="navbar-nav" className="justify-content-end">
             <Nav className="gap-2">
               <Nav.Link href="/dashboardi">Dashboard</Nav.Link>
-              <Nav.Link href="/user">User</Nav.Link>
+
+              {/* User Dropdown */}
+              <NavDropdown title="User" id="user-dropdown">
+                <NavDropdown.Item href="/user/view">View User</NavDropdown.Item>
+                <NavDropdown.Item href="/user/add">Add User</NavDropdown.Item>
+              </NavDropdown>
+
               <Nav.Link href="/project">Project</Nav.Link>
-              <Nav.Link href="/registration">Registration</Nav.Link>
+
+              {/* Registration Dropdown */}
+              <NavDropdown title="Registration" id="registration-dropdown">
+                <NavDropdown.Item href="/registration/customer">Customer Registration</NavDropdown.Item>
+                <NavDropdown.Item href="/registration/associate">Associate Registration</NavDropdown.Item>
+                <NavDropdown.Item href="/registration/freelancer">Freelancer Registration</NavDropdown.Item>
+                <NavDropdown.Item href="/registration/landowner">Land Owner Registration</NavDropdown.Item>
+              </NavDropdown>
+
               <Nav.Link href="/booking">Booking</Nav.Link>
               <Nav.Link href="/payment">Payment</Nav.Link>
               <Nav.Link href="/expenses">Expenses</Nav.Link>
               <Nav.Link href="/gallery">Gallery</Nav.Link>
               <Nav.Link href="/messages">Messages</Nav.Link>
+
               <Button
                 href="/logout"
                 className="ms-2"
-                style={{ backgroundColor: 'rgb(247, 141, 20)', border: 'none', color: 'white' }}
+                style={{
+                  backgroundColor: 'rgb(247, 141, 20)',
+                  border: 'none',
+                  color: 'white',
+                }}
               >
                 Logout
               </Button>
