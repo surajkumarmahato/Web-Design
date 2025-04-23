@@ -19,6 +19,10 @@ import FreeLanReg from './MyComponent/FreeLanReg';
 import LandOwnerReg from './MyComponent/LandOwnerReg';
 import Booking from './MyComponent/Booking';
 import Gallery from './MyComponent/Gallery';
+import ViewUser from './MyComponent/ViewUser';
+import AddUser from './MyComponent/AddUser';
+import AddPerm from './MyComponent/AddPerm';
+import Payout from './MyComponent/Payout';
 
 function App() {
   return (
@@ -30,12 +34,27 @@ function App() {
         <Route path="/logout" element={<LoginPage/>} />
         <Route path="/dashboard" element={<NavAdmin/>} />
         <Route path="/dashboardi" element={<Dashboard/>} />
-        <Route path="/User" element={<User/>} />
+        <Route path="/user/add" element={<AddUser/>} />
+        <Route path="/user/view" element={<ViewUser/>} />
+        <Route path="/user/prem" element={<AddPerm/>} />
         <Route path="/Project" element={<Project/>} />
+        <Route path="/registration/customer" element={<CustReg/>} />
+        <Route path="/registration/associate" element={<AssoReg/>} />
+        <Route path="/registration/freelancer" element={<FreeLanReg/>} />
+        <Route path="/registration/landowner" element={<LandOwnerReg/>} />
+        <Route path="/booking" element={<Booking/>} />
+        <Route path="/gallery" element={<Gallery/>} />
+        
+
+
+
       </Routes>
       {/* <NavAdmin/> */}
       {/* <Dashboard/> */}
       {/* <User /> */}
+      {/* <ViewUser/> */}
+      {/* <AddUser/> */}
+      {/* < AddPerm/> */}
       {/* <Project/> */}
       {/* <RegMain/> */}
       {/* <CustReg/> */}
@@ -44,6 +63,7 @@ function App() {
       {/* <LandOwnerReg/> */}
       {/* <Booking/> */}
       {/* <Gallery/> */}
+      {/* <Payout/> */}
 
       <Footer />
     </Router>

@@ -1,14 +1,13 @@
 import React from 'react';
 import NavAdmin from './NavAdmin';
 import {
-  Navbar,
   Container,
-  Nav,
-  Button,
-  Form,
   Card,
+  Table,
   Row,
   Col,
+  Button,
+  Form,
 } from 'react-bootstrap';
 
 export default function Project() {
@@ -18,11 +17,12 @@ export default function Project() {
       <NavAdmin />
 
       {/* Main Content */}
-      <div className="py-5 bg-light min-vh-100">
+      <div className="py-5 min-vh-100" style={{ background: 'linear-gradient(to right, rgb(222, 200, 170), rgb(170, 207, 170))' }}>
         <Container>
+          
           {/* Add New Project */}
           <Card className="mb-5 shadow-sm">
-            <Card.Header className="bg-secondary text-white fw-bold">
+            <Card.Header className="bg-dark text-white fw-bold">
               ADD NEW PROJECT
             </Card.Header>
             <Card.Body>
@@ -97,7 +97,7 @@ export default function Project() {
 
           {/* Add New Property */}
           <Card className="shadow-sm">
-            <Card.Header className="bg-secondary text-white fw-bold">
+            <Card.Header className="bg-dark text-white fw-bold">
               ADD NEW PROPERTY
             </Card.Header>
             <Card.Body>

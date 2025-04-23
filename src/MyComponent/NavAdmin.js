@@ -24,6 +24,7 @@ export default function NavAdmin() {
               <NavDropdown title="User" id="user-dropdown">
                 <NavDropdown.Item href="/user/view">View User</NavDropdown.Item>
                 <NavDropdown.Item href="/user/add">Add User</NavDropdown.Item>
+                <NavDropdown.Item href="/user/prem">Permission</NavDropdown.Item>
               </NavDropdown>
 
               <Nav.Link href="/project">Project</Nav.Link>
