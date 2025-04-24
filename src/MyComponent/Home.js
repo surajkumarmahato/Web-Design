@@ -56,7 +56,7 @@ export default function Home() {
               transition={{ duration: 1.2 }}
               viewport={{ once: false, amount: 0.2 }}
             >
-              <img src="about.jpg" alt="About URMICHAND GROUP" className="img-fluid rounded shadow" width="500px" />
+              <img src="bgimg.jpeg" alt="About URMICHAND GROUP" className="img-fluid rounded shadow" width="500px" />
             </motion.div>
 
             <motion.div
