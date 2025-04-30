@@ -27,7 +27,12 @@ export default function NavAdmin() {
                 <NavDropdown.Item href="/user/prem">Permission</NavDropdown.Item>
               </NavDropdown>
 
-              <Nav.Link href="/project">Project</Nav.Link>
+              {/* <Nav.Link href="/project">Project</Nav.Link> */}
+              <NavDropdown title="Project" id="Project-dropdown">
+                <NavDropdown.Item href="/project/addproject">Add Project</NavDropdown.Item>
+                <NavDropdown.Item href="/project/addproperty">Add Property</NavDropdown.Item>
+                <NavDropdown.Item href="/project/viewproperty">View Property</NavDropdown.Item>
+              </NavDropdown>
 
               {/* Registration Dropdown */}
               <NavDropdown title="Registration" id="registration-dropdown">
@@ -39,8 +44,18 @@ export default function NavAdmin() {
 
               <Nav.Link href="/booking">Booking</Nav.Link>
               <Nav.Link href="/payment">Payment</Nav.Link>
-              <Nav.Link href="/expenses">Expenses</Nav.Link>
-              <Nav.Link href="/gallery">Gallery</Nav.Link>
+
+              <NavDropdown title="Expenses" id="Expenses-dropdown">
+                <NavDropdown.Item href="/expenses/viewexpenses">View Expenses</NavDropdown.Item>
+                <NavDropdown.Item href="/expenses/addexpenses">Add Expenses</NavDropdown.Item>
+              </NavDropdown>
+
+              <NavDropdown title="Gallery" id="Gallery-dropdown">
+                <NavDropdown.Item href="/gallery/galleryview">View Photos</NavDropdown.Item>
+                <NavDropdown.Item href="/gallery/galleryadd">Add Photos</NavDropdown.Item>
+              </NavDropdown>
+{/* 
+              <Nav.Link href="/gallery">Gallery</Nav.Link> */}
               <Nav.Link href="/messages">Messages</Nav.Link>
 
               <Button

@@ -4,16 +4,55 @@ import NavAdmin from './NavAdmin';
 export default function Booking() {
   const [customerId, setCustomerId] = useState('');
   const [customerName, setCustomerName] = useState('');
-  const [customerPhoto, setCustomerPhoto] = useState('');
   const [showDetails, setShowDetails] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [gst, setGst] = useState('0');
+  const [filteredCustomers, setFilteredCustomers] = useState([]);
+
+  // Sample customer list
+  const customers = [
+    { id: 'CUST1234', name: 'Rahul' },
+    { id: 'CUST5678', name: 'Aditya' },
+    { id: 'CUST9999', name: 'Shoubhik' }
+  ];
+
+  const handleCustomerChange = (e) => {
+    const id = e.target.value.toUpperCase();
+    setCustomerId(id);
+
+    if (id.length >= 4) {
+      const filtered = customers.filter(cust => cust.id.includes(id));
+      setFilteredCustomers(filtered);
+    } else {
+      setFilteredCustomers([]);
+    }
+
+    setShowDetails(false);
+    setShowForm(false);
+  };
+
+  const handleSelectCustomer = (customer) => {
+    setCustomerId(customer.id);
+    setCustomerName(customer.name);
+    setShowDetails(true);
+    setShowForm(false);
+    setFilteredCustomers([]);
+  };
 
   const handleCustomerSubmit = () => {
-    // Simulate fetching customer data
-    setCustomerName('John Doe');
-    setCustomerPhoto('https://via.placeholder.com/100');
-    setShowDetails(true);
-    setShowForm(true);
+    const idPattern = /^CUST\d{4}$/;
+    if (!idPattern.test(customerId)) {
+      alert('Customer ID must be in format CUST1234.');
+      return;
+    }
+    const foundCustomer = customers.find(cust => cust.id === customerId);
+    if (foundCustomer) {
+      setCustomerName(foundCustomer.name);
+      setShowDetails(true);
+      setShowForm(true);
+    } else {
+      alert('Customer not found.');
+    }
   };
 
   return (
@@ -27,23 +66,39 @@ export default function Booking() {
       <NavAdmin />
       <div className="container mt-4">
         <h2 className="mb-4">Customer Identification</h2>
-        <div className="mb-3 d-flex align-items-center gap-3">
+
+        <div className="mb-3 position-relative">
           <input
             type="text"
             className="form-control w-50"
-            placeholder="Enter Customer ID"
+            placeholder="Enter Customer ID (e.g., CUST1234)"
             value={customerId}
-            onChange={(e) => setCustomerId(e.target.value)}
+            onChange={handleCustomerChange}
           />
-          <button className="btn btn-primary" onClick={handleCustomerSubmit}>Submit</button>
+          {/* Suggestion Dropdown */}
+          {filteredCustomers.length > 0 && (
+            <ul className="list-group position-absolute w-50" style={{ zIndex: 1000 }}>
+              {filteredCustomers.map((cust, idx) => (
+                <li
+                  key={idx}
+                  className="list-group-item list-group-item-action"
+                  onClick={() => handleSelectCustomer(cust)}
+                  style={{ cursor: 'pointer' }}
+                >
+                  {cust.id} - {cust.name}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
 
+        <button className="btn btn-primary mb-4" onClick={handleCustomerSubmit}>
+          Submit
+        </button>
+
         {showDetails && (
-          <div className="mb-4 d-flex align-items-center gap-3">
-            <div>
-              <strong>Name:</strong> {customerName}
-            </div>
-            <img src={customerPhoto} alt="Customer" width="100" height="100" style={{ borderRadius: '10px' }} />
+          <div className="mb-4">
+            <strong>Name:</strong> {customerName}
           </div>
         )}
 
@@ -51,6 +106,7 @@ export default function Booking() {
           <form>
             <h3 className="mb-3">Booking Form</h3>
             <div className="row g-3">
+              {/* Referral and Project Selection */}
               <div className="col-md-6">
                 <label className="form-label">Referral ID</label>
                 <select className="form-select">
@@ -68,6 +124,8 @@ export default function Booking() {
                   <option>Project B</option>
                 </select>
               </div>
+
+              {/* Auto-filled Details */}
               <div className="col-md-6">
                 <label className="form-label">Location</label>
                 <input type="text" className="form-control" value="Auto Location" readOnly />
@@ -110,6 +168,8 @@ export default function Booking() {
                 <label className="form-label">Rate</label>
                 <input type="text" className="form-control" value="Auto Rate" readOnly />
               </div>
+
+              {/* Manual Inputs */}
               <div className="col-md-6">
                 <label className="form-label">PLC (If Any)</label>
                 <input type="text" className="form-control" value="Auto PLC" readOnly />
@@ -120,90 +180,114 @@ export default function Booking() {
               </div>
               <div className="col-md-6">
                 <label className="form-label">Development Charge</label>
-                <input type="text" className="form-control" value="Auto Development Charge" readOnly />
+                <input type="text" className="form-control" placeholder="Enter Development Charge" />
               </div>
+
               <div className="col-12">
                 <label className="form-label">Other Charges</label>
                 <input type="text" className="form-control" />
               </div>
+
+              {/* Financial Details */}
               <div className="col-md-4">
                 <label className="form-label">Gross Total</label>
-                <input type="text" className="form-control" readOnly />
+                <input type="text" className="form-control" />
               </div>
+
               <div className="col-md-4">
                 <label className="form-label">Discount</label>
                 <input type="text" className="form-control" />
               </div>
+
               <div className="col-md-4">
-                <label className="form-label">GST</label>
-                <input type="text" className="form-control" readOnly />
+                <label className="form-label">GST (%)</label>
+                <select
+                  className="form-select"
+                  value={gst}
+                  onChange={(e) => setGst(e.target.value)}
+                >
+                  <option value="0">0%</option>
+                  <option value="1">1%</option>
+                  <option value="5">5%</option>
+                  <option value="12">12%</option>
+                  <option value="18">18%</option>
+                </select>
               </div>
+
               <div className="col-md-4">
                 <label className="form-label">Net Total</label>
                 <input type="text" className="form-control" readOnly />
               </div>
+
               <div className="col-md-4">
                 <label className="form-label">Booking Amount</label>
                 <input type="text" className="form-control" />
               </div>
+
               <div className="col-md-4">
                 <label className="form-label">Rest Amount</label>
                 <input type="text" className="form-control" readOnly />
               </div>
+
+              {/* EMI & Business */}
               <div className="col-md-6">
                 <label className="form-label">EMI Tenure</label>
                 <input type="text" className="form-control" />
               </div>
+
               <div className="col-md-6">
                 <label className="form-label">Business Count</label>
                 <input type="text" className="form-control" />
               </div>
-              <hr />
+
+              {/* Payment Details */}
+              <h3 className="mb-3">Payment Details</h3>
+
               <div className="col-md-4">
                 <label className="form-label">Payment Mode</label>
-                <input type="text" className="form-control" />
+                <select className="form-control">
+                  <option value="">Select Payment Mode</option>
+                  <option value="Cash">Cash</option>
+                  <option value="UPI">UPI</option>
+                  <option value="DD">DD</option>
+                  <option value="Cheque">Cheque</option>
+                  <option value="Bank">Bank</option>
+                  <option value="NEFT">NEFT</option>
+                  <option value="RTGS">RTGS</option>
+                </select>
               </div>
+
               <div className="col-md-4">
                 <label className="form-label">Bank Name</label>
                 <input type="text" className="form-control" />
               </div>
+
               <div className="col-md-4">
-                <label className="form-label">Transaction Details</label>
+                <label className="form-label">Transaction Number</label>
                 <input type="text" className="form-control" />
               </div>
+
               <div className="col-md-4">
                 <label className="form-label">Date of Transaction</label>
                 <input type="date" className="form-control" />
               </div>
+
               <div className="col-md-4">
                 <label className="form-label">Fund Received In</label>
-                
                 <input type="text" className="form-control" />
               </div>
+
               <div className="col-md-4">
-                <label className="form-label">Bank / Office Name</label>
-                <input type="text" className="form-control" />
-              </div>
-              <div className="col-md-6">
                 <label className="form-label">Company Name</label>
                 <input type="text" className="form-control" />
               </div>
             </div>
+
+            {/* Action Buttons */}
             <div className="mt-4">
-              <button className="btn btn-success">Send For Approval</button>
+              <button className="btn btn-success me-3">Save</button>
+              <button className="btn btn-secondary">Reset</button>
             </div>
-
-            <hr className="my-4" />
-
-            <h5>Verification Section</h5>
-            <p>Verification will be done by authorized personnel. Once verified, final booking and invoice will be generated.</p>
-            <button className="btn btn-warning me-3">Send for Verification</button>
-            <button className="btn btn-info">Generate Invoice</button>
-
-            <hr className="my-4" />
-
-            <h5>Customer EMI Schedule</h5>
-            <p>(EMI schedule will appear here post booking approval)</p>
           </form>
         )}
       </div>

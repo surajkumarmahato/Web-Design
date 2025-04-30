@@ -18,17 +18,17 @@ export default function LandOwnerReg() {
         <Form>
           <h5 className="mb-3">Land Details</h5>
           <Row className="mb-3">
-            <Col md={4}><Form.Group><Form.Label>Location</Form.Label><Form.Control type="text" /></Form.Group></Col>
-            <Col md={4}><Form.Group><Form.Label>Mouza</Form.Label><Form.Control type="text" /></Form.Group></Col>
-            <Col md={4}><Form.Group><Form.Label>Khata No</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={3}><Form.Group><Form.Label>Location</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={3}><Form.Group><Form.Label>Mouza</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={3}><Form.Group><Form.Label>Khata No</Form.Label><Form.Control type="text" /></Form.Group></Col>
           </Row>
           <Row className="mb-4">
-            <Col md={4}><Form.Group><Form.Label>Khesra No</Form.Label><Form.Control type="text" /></Form.Group></Col>
-            <Col md={4}><Form.Group><Form.Label>Area in Decimal</Form.Label><Form.Control type="text" /></Form.Group></Col>
-            <Col md={4}><Form.Group><Form.Label>Rate per Decimal</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={3}><Form.Group><Form.Label>Khesra No</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={3}><Form.Group><Form.Label>Area in Decimal</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={3}><Form.Group><Form.Label>Rate per Decimal</Form.Label><Form.Control type="text" /></Form.Group></Col>
           </Row>
           <Row className="mb-3">
-            <Col md={4}><Form.Group><Form.Label>Total Amount</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={3}><Form.Group><Form.Label>Total Amount</Form.Label><Form.Control type="text" /></Form.Group></Col>
           </Row>
 
           <h5 className="mb-3 mt-5">Landowner Details</h5>
@@ -63,15 +63,17 @@ export default function LandOwnerReg() {
 
           <h5 className="mb-3 mt-5">Landowner Bank Details</h5>
           <Row className="mb-3">
-            <Col md={4}><Form.Group><Form.Label>Name Of Account Holder</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={4}><Form.Group><Form.Label>Name of Account Holder</Form.Label><Form.Control type="text" /></Form.Group></Col>
             <Col md={4}><Form.Group><Form.Label>IFSC Code</Form.Label><Form.Control type="text" /></Form.Group></Col>
             <Col md={4}><Form.Group><Form.Label>Branch</Form.Label><Form.Control type="text" /></Form.Group></Col>
           </Row>
           <Row className="mb-3">
-            <Col md={4}><Form.Group><Form.Label>Account No</Form.Label><Form.Control type="text" /></Form.Group></Col>
-            <Col md={4}><Form.Group><Form.Label>Bank Name</Form.Label><Form.Control type="text" /></Form.Group></Col>
-            <Col md={4}><Form.Group><Form.Label>Account Type</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={3}><Form.Group><Form.Label>Account No</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={3}><Form.Group><Form.Label>Bank Name</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={3}><Form.Group><Form.Label>Account Type</Form.Label><Form.Select><option>Savings</option><option>Current</option></Form.Select></Form.Group></Col>
+            <Col md={3}><Form.Group><Form.Label>Upload Cancelled Cheque </Form.Label><Form.Control type="file" /></Form.Group></Col>
           </Row>
+
 
           <h5 className="mb-3 mt-5">Broker Details</h5>
           <Row className="mb-3">
@@ -105,15 +107,17 @@ export default function LandOwnerReg() {
 
           <h5 className="mb-3 mt-5">Broker Bank Details</h5>
           <Row className="mb-3">
-            <Col md={4}><Form.Group><Form.Label>Name Of Account Holder</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={4}><Form.Group><Form.Label>Name of Account Holder</Form.Label><Form.Control type="text" /></Form.Group></Col>
             <Col md={4}><Form.Group><Form.Label>IFSC Code</Form.Label><Form.Control type="text" /></Form.Group></Col>
             <Col md={4}><Form.Group><Form.Label>Branch</Form.Label><Form.Control type="text" /></Form.Group></Col>
           </Row>
-          <Row className="mb-4">
-            <Col md={4}><Form.Group><Form.Label>Account No</Form.Label><Form.Control type="text" /></Form.Group></Col>
-            <Col md={4}><Form.Group><Form.Label>Bank Name</Form.Label><Form.Control type="text" /></Form.Group></Col>
-            <Col md={4}><Form.Group><Form.Label>Account Type</Form.Label><Form.Control type="text" /></Form.Group></Col>
+          <Row className="mb-3">
+            <Col md={3}><Form.Group><Form.Label>Account No</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={3}><Form.Group><Form.Label>Bank Name</Form.Label><Form.Control type="text" /></Form.Group></Col>
+            <Col md={3}><Form.Group><Form.Label>Account Type</Form.Label><Form.Select><option>Savings</option><option>Current</option></Form.Select></Form.Group></Col>
+            <Col md={3}><Form.Group><Form.Label>Upload Cancelled Cheque </Form.Label><Form.Control type="file" /></Form.Group></Col>
           </Row>
+
 
           <div className="text-center mt-4">
             <Button
