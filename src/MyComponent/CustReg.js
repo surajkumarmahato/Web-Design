@@ -67,7 +67,7 @@ export default function CustReg() {
 
   return (
     <div
-      className="min-vh-100 d-flex flex-column"
+      className="min-vh-100"
       style={{
         background:
           "linear-gradient(to right, rgb(222, 200, 170), rgb(170, 207, 170))",
@@ -151,6 +151,7 @@ export default function CustReg() {
                   </Form.Group>
                 </Col>
               </Row>
+
               <Row className="mb-3">
                 <Col md={4}>
                   <Form.Group>
@@ -200,6 +201,7 @@ export default function CustReg() {
                   </Form.Group>
                 </Col>
               </Row>
+
               <Row className="mb-3">
                 <Col md={4}>
                   <Form.Group>
@@ -246,6 +248,7 @@ export default function CustReg() {
                   </Form.Group>
                 </Col>
               </Row>
+
               <Row className="mb-3">
                 <Col md={4}>
                   <Form.Group>
@@ -284,6 +287,7 @@ export default function CustReg() {
                   </Form.Group>
                 </Col>
               </Row>
+
               <Row className="mb-3">
                 <Col md={6}>
                   <Form.Group>
@@ -368,7 +372,7 @@ export default function CustReg() {
             </div>
           ))}
 
-          <div className="mb-5 text-end">
+          <div className="text-end mb-5">
             <Button variant="outline-primary" size="sm" onClick={addApplicant}>
               + Add Another Applicant
             </Button>
@@ -420,9 +424,9 @@ export default function CustReg() {
             </Row>
           </div>
 
-          <div className="text-center">
-            <Button variant="success" type="submit" className="px-5">
-              Submit
+          <div className="text-center mt-4">
+            <Button type="submit" variant="primary" size="lg">
+            Generate ID & Password
             </Button>
             <p className="mt-3 text-muted">
               Upon submission, a Customer ID like <strong>CUS-1234</strong> and

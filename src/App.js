@@ -43,22 +43,24 @@ function App() {
         <Route path="/booking" element={<Booking />} />
         <Route path="/gallery" element={<Gallery />} />
       </Routes>
-      {/* <NavAdmin/> */}
+      {/* <AddProject/> */}
+      {/* <AddProperty/> */}
+      {/* <ViewProperty/> */}
       {/* <Dashboard/> */}
-      {/* <User /> */}
-      {/* <ViewUser/> */}
-      {/* <AddUser/> */}
-      {/* < AddPerm/> */}
-      {/* <Project/> */}
-      {/* <RegMain/> */}
       {/* <CustReg/> */}
-      {/* <AssoReg/> */}
+      <AssoReg />
       {/* <FreeLanReg/> */}
+      {/* <AddUser/> */}
       {/* <LandOwnerReg/> */}
       {/* <Booking/> */}
-      {/* <Gallery/> */}
+      {/* <GalleryView/> */}
+      {/* <NavCust/> */}
+      {/* <DocCust/> */}
+      {/* <AddExp/> */}
       {/* <Payout/> */}
-
+      {/* <AllotLet/> */}
+      {/* <PosLet/> */}
+      {/* <RegLet/> */}
       <Footer />
     </Router>
   );

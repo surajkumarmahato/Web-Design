@@ -72,7 +72,7 @@ export default function User() {
                   <Col md={4}><Form.Group><Form.Label>Whatsapp No</Form.Label><Form.Control type="text" /></Form.Group></Col>
                   <Col md={4}><Form.Group><Form.Label>Email ID</Form.Label><Form.Control type="email" /></Form.Group></Col>
                 </Row>
-                <Button variant="success" className="mt-4">Generate EMP ID & Password</Button>
+                <Button variant="success" className="mt-4">Generate ID & Password</Button>
               </Form>
             </Card.Body>
           </Card>

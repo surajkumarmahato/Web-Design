@@ -12,7 +12,7 @@ export default function LoginPage() {
   const handleLogin = (e) => {
     e.preventDefault();
     setIsLoggedIn(true);
-    navigate('/dashboard');
+    navigate('/dashboardi');
   };
 
   return (
@@ -65,6 +65,7 @@ export default function LoginPage() {
               <option value="associate">Associate</option>
               <option value="admin">Admin</option>
               <option value="customer">Customer</option>
+              <option value="user">Employee</option>
             </select>
           </div>
 
