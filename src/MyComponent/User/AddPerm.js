@@ -1,13 +1,35 @@
-import React, { useState } from 'react';
-import { Container, Card, Form, Row, Col, Button } from 'react-bootstrap';
-import NavAdmin from './NavAdmin';
+import React, { useState, useEffect } from "react";
+import { Container, Card, Form, Row, Col, Button } from "react-bootstrap";
+import NavAdmin from "../NavAdmin";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  addDoc,
+  query,
+  where,
+} from "firebase/firestore";
+import { db } from "../FirebaseConfig";
 
 export default function AddPerm() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const users = ['User 1', 'User 2', 'John Doe', 'Jane Smith', 'Alice', 'Bob'];
-  const filteredUsers = users.filter(user =>
-    user.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const usersCollection = collection(db, "users");
+      const userSnapshot = await getDocs(usersCollection);
+      const userList = userSnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setUsers(userList);
+    };
+
+    fetchUsers();
+  }, []);
+  const [searchTerm, setSearchTerm] = useState("");
+  const filteredUsers = users
+    .map((user) => user.name)
+    .filter((user) => user.toLowerCase().includes(searchTerm.toLowerCase()));
 
   return (
     <div>
@@ -15,12 +37,15 @@ export default function AddPerm() {
       <div
         className="py-5 min-vh-100"
         style={{
-          background: 'linear-gradient(to right, rgb(222, 200, 170), rgb(170, 207, 170))',
+          background:
+            "linear-gradient(to right, rgb(222, 200, 170), rgb(170, 207, 170))",
         }}
       >
         <Container>
           <Card className="shadow-sm">
-            <Card.Header className="bg-dark text-white fw-bold">User Permissions</Card.Header>
+            <Card.Header className="bg-dark text-white fw-bold">
+              User Permissions
+            </Card.Header>
             <Card.Body>
               <Form>
                 <Form.Group className="mb-3">
@@ -87,7 +112,9 @@ export default function AddPerm() {
                   </Col>
                 </Row>
 
-                <Button variant="success" className="mt-3">Assign Permissions</Button>
+                <Button variant="success" className="mt-3">
+                  Assign Permissions
+                </Button>
               </Form>
             </Card.Body>
           </Card>
