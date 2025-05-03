@@ -17,7 +17,7 @@ import AssoReg from "./MyComponent/AssoReg";
 import FreeLanReg from "./MyComponent/FreeLanReg";
 import LandOwnerReg from "./MyComponent/LandOwnerReg";
 import Booking from "./MyComponent/Booking";
-import Gallery from "./MyComponent/Gallery";
+import Gallery from "./MyComponent/GalleryView";
 import ViewUser from "./MyComponent/User/ViewUser";
 import AddUser from "./MyComponent/User/AddUser";
 import AddPerm from "./MyComponent/User/AddPerm";
@@ -48,7 +48,7 @@ function App() {
       {/* <ViewProperty/> */}
       {/* <Dashboard/> */}
       {/* <CustReg/> */}
-      <AssoReg />
+      {/* <AssoReg /> */}
       {/* <FreeLanReg/> */}
       {/* <AddUser/> */}
       {/* <LandOwnerReg/> */}
