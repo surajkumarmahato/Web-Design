@@ -22,6 +22,14 @@ import ViewUser from "./MyComponent/User/ViewUser";
 import AddUser from "./MyComponent/User/AddUser";
 import AddPerm from "./MyComponent/User/AddPerm";
 import Payout from "./MyComponent/Payout";
+import AddProject from "./MyComponent/AddProject";
+import AddProperty from "./MyComponent/AddProperty";
+import ViewProperty from "./MyComponent/ViewProperty";
+import AddExpenses from "./MyComponent/AddExpenses";
+import AddExp from "./MyComponent/AddExp";
+import ViewExp from "./MyComponent/ViewExp";
+
+
 
 function App() {
   return (
@@ -35,25 +43,36 @@ function App() {
         <Route path="/user/add" element={<AddUser />} />
         <Route path="/user/view" element={<ViewUser />} />
         <Route path="/user/prem" element={<AddPerm />} />
-        <Route path="/Project" element={<Project />} />
+        <Route path="/project/addproject" element={<AddProject/>} />
+        <Route path="/project/addproperty" element={<AddProperty/>} />
+        <Route path="/project/viewproperty" element={<ViewProperty/>} />
         <Route path="/registration/customer" element={<CustReg />} />
         <Route path="/registration/associate" element={<AssoReg />} />
         <Route path="/registration/freelancer" element={<FreeLanReg />} />
         <Route path="/registration/landowner" element={<LandOwnerReg />} />
+        <Route path="/expenses/viewexp" element={<ViewExp/>}/>
+        <Route path="/expenses/addexp" element={<AddExp/>}/>
         <Route path="/booking" element={<Booking />} />
         <Route path="/gallery" element={<Gallery />} />
       </Routes>
+      {/* <ViewUser/> */}
+      {/* <AddProperty/> */}
+      {/* <AddProject/> */}
+      {/* <AddProject/> */}
+      {/* <User/> */}
       {/* <AddProject/> */}
       {/* <AddProperty/> */}
       {/* <ViewProperty/> */}
-      {/* <Dashboard/> */}
       {/* <CustReg/> */}
       {/* <AssoReg /> */}
       {/* <FreeLanReg/> */}
-      {/* <AddUser/> */}
       {/* <LandOwnerReg/> */}
+
+      {/* <Dashboard/> */}
+
+      {/* <AddUser/> */}
       {/* <Booking/> */}
-      {/* <GalleryView/> */}
+
       {/* <NavCust/> */}
       {/* <DocCust/> */}
       {/* <AddExp/> */}

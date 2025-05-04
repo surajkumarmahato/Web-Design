@@ -46,8 +46,8 @@ export default function NavAdmin() {
               <Nav.Link href="/payment">Payment</Nav.Link>
 
               <NavDropdown title="Expenses" id="Expenses-dropdown">
-                <NavDropdown.Item href="/expenses/viewexpenses">View Expenses</NavDropdown.Item>
-                <NavDropdown.Item href="/expenses/addexpenses">Add Expenses</NavDropdown.Item>
+                <NavDropdown.Item href="/expenses/viewexp">View Expenses</NavDropdown.Item>
+                <NavDropdown.Item href="/expenses/addexp">Add Expenses</NavDropdown.Item>
               </NavDropdown>
 
               <NavDropdown title="Gallery" id="Gallery-dropdown">
